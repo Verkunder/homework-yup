@@ -45,6 +45,11 @@
 
 <script setup>
 import {useRequestForm} from "../src/use/request-form";
+import {onMounted} from "vue";
+
+const log = onMounted(() => {
+  console.log('123')
+})
 
 const {
   password,

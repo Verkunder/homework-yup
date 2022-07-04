@@ -61,7 +61,7 @@ export function useRequestForm(fn) {
         yup
             .string()
             .required('Это обязательно')
-            .test('prof', 'Менеджер не валидное значение!', testManager => role.value === 'media' && prof.value === 'manager' ? false : true)
+            .test('prof', 'Менеджер не валидное значение!', testManager => !(role.value === 'media' && prof.value === 'manager'))
     )
 
     const onSybmit = handleSubmit( async values => {
